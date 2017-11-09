@@ -13,6 +13,6 @@ toDoController(app);
 
 
 //Starting up server
-app.listen(3000, function(){
+app.listen(3001, function(){
 	console.log("Server has started for TODO List app.");
 });

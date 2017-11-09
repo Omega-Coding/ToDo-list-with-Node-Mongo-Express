@@ -4,7 +4,7 @@ module.exports = function(app){
 
 	//Main page of the website - showcasing all the todos
 	app.get('/todo', function(req, res){
-		res.send("To do app");
+		res.render('todo');
 	});
 
 	app.post('/todo', function(req, res){
