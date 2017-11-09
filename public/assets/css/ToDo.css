@@ -1,0 +1,90 @@
+body, html{
+	background: skyblue; /* For browsers that do not support gradients */
+  	background: -webkit-linear-gradient(left top, skyblue, white); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(bottom right, skyblue, white); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(bottom right, skyblue, white); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, skyblue, white); /* Standard syntax */
+  	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Roboto Slab', 'serif';
+}
+
+#wrapper{
+	width: 360px;
+	margin: 100px auto;
+	background: #f7f7f7;
+	/*line-height: 30px;*/
+}
+
+#header{
+	min-width: 100%;
+	background-color: #2980b9; 
+}
+
+#ul{
+	list-style-type: none;
+	text-align: left;
+	padding: 0 0 0 10px;
+	margin: 0;
+	border: none;
+	background-color: white;
+}
+
+li{
+	background: #fff;
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+
+}
+
+li:nth-child(2n){
+	background-color: #f7f7f7;
+}
+
+.cross{
+	text-decoration: line-through;
+}
+
+#delete{
+	padding: 0 5px;
+}
+
+.hide{
+	display: none;
+}
+
+#ind{
+	padding-left: 10px;
+	word-spacing: 2px;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+#toggle{
+	float: right;
+	padding-right: 14px;
+	padding-top: 4px;
+	color: white;
+	line-height: 30px;
+}
+
+input[type="text"]{
+	padding: 8px 10px 8px 10px;
+	border: 0;
+	width: 100%;
+	font-size: 18px;
+	font-family: 'Roboto Slab', serif;
+	background-color: #f7f7f7;
+	box-sizing: border-box;
+	color: #2980b9;
+}
+
+input[type="text"]:focus{
+	background: #fff;
+	border: 1px solid #2980b9;
+	outline: none;
+}
