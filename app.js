@@ -13,6 +13,6 @@ toDoController(app);
 
 
 //Starting up server
-app.listen(3001, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
 	console.log("Server has started for TODO List app.");
 });
