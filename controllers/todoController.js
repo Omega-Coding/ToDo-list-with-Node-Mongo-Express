@@ -12,6 +12,10 @@ module.exports = function(app){
 	//Routes
 
 	//Main page of the website - showcasing all the todos
+	app.get('/', function(req, res){
+		res.send("App has started correctly");
+	});
+
 	app.get('/todo', function(req, res){
 		Todo.find({}, function(err, data){
 			if(err){
