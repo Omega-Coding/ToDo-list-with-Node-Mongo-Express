@@ -13,10 +13,6 @@ module.exports = function(app){
 
 	//Main page of the website - showcasing all the todos
 	app.get('/', function(req, res){
-		res.send("App has started correctly");
-	});
-
-	app.get('/', function(req, res){
 		Todo.find({}, function(err, data){
 			if(err){
 				console.log(err);
