@@ -12,7 +12,7 @@ $("input[type='text']").keypress(function(event){
 		var todo = {item: $(this).val()};
 		$.ajax({
         type: 'POST',
-        url: '/todo',
+        url: '/',
         data: todo,
         success: function(data){
           location.reload();
@@ -40,7 +40,7 @@ $("ul").on("mouseenter", "li", function(){
 		});
       	$.ajax({
 	        type: 'DELETE',
-	        url: '/todo/' + item,
+	        url: '/' + item,
 	        success: function(data){
 	          location.reload();
         }
