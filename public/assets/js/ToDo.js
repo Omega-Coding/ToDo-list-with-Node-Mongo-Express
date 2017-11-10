@@ -1,4 +1,3 @@
-/*var Todo = require('../../../models/TodoItem.js');*/
 
 // Event handler for crossing out a list item when its clicked on
 $("ul").on("click", "li", function(){
@@ -10,8 +9,20 @@ $("ul").on("click", "li", function(){
 $("input[type='text']").keypress(function(event){
 	if(event.which === 13){
 		var $newLi = "<li>"+$(this).val()+"</li>";
+		var todo = {item: $(this).val()};
+		$.ajax({
+        type: 'POST',
+        url: '/todo',
+        data: todo,
+        success: function(data){
+          location.reload();
+        }
+      });
+
 		$(this).val("");
 		$('ul#ul').append($newLi);
+
+		return false;
 	}
 });
 
@@ -23,9 +34,17 @@ $("ul").on("mouseenter", "li", function(){
 	$(this).prepend(bin);
 
 	$("#delete").on("click", function(e){
+		var item = $(this).parent().text().replace(/ /g, "-");
 		$(this).parent().fadeOut(500, function(){
 			$(this).remove();
 		});
+      	$.ajax({
+	        type: 'DELETE',
+	        url: '/todo/' + item,
+	        success: function(data){
+	          location.reload();
+        }
+      });
 		e.stopPropagation();
 	});
 });
