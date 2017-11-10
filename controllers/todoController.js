@@ -16,7 +16,7 @@ module.exports = function(app){
 		res.send("App has started correctly");
 	});
 
-	app.get('/todo', function(req, res){
+	app.get('/', function(req, res){
 		Todo.find({}, function(err, data){
 			if(err){
 				console.log(err);
@@ -27,7 +27,7 @@ module.exports = function(app){
 	});
 
 	//Adding a new todo item
-	app.post('/todo', urlencodedParser, function(req, res){
+	app.post('/', urlencodedParser, function(req, res){
 		var newTodo = Todo(req.body).save(function(err, data){
 			if(err){
 				console.log(err);
@@ -38,7 +38,7 @@ module.exports = function(app){
 	});
 
 	//Delete route for deleting a todo item
-	app.delete('/todo/:item', function(req, res){
+	app.delete('/:item', function(req, res){
 		Todo.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err, data){
 			if(err) {
 				console.log(err);
