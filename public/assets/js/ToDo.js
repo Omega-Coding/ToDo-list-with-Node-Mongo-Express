@@ -22,7 +22,7 @@ $("input[type='text']").keypress(function(event){
 		$(this).val("");
 		$('ul#ul').append($newLi);
 
-		return false;
+		return false;  //To stop event propagation
 	}
 });
 
@@ -34,7 +34,7 @@ $("ul").on("mouseenter", "li", function(){
 	$(this).prepend(bin);
 
 	$("#delete").on("click", function(e){
-		var item = $(this).parent().text().replace(/ /g, "-");
+		var item = $(this).parent().text().replace(/ /g, "-"); //To make the data url friendly
 		$(this).parent().fadeOut(500, function(){
 			$(this).remove();
 		});
